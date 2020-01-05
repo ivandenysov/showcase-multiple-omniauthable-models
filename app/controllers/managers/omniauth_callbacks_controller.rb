@@ -1,5 +1,5 @@
 class Managers::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def facebook
+  def manager_facebook
     @manager = Manager.from_omniauth(request.env["omniauth.auth"])
 
     if @manager.persisted?
