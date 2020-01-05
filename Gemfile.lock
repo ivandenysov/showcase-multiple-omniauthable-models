@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/ivan/Code/devise
+GIT
+  remote: https://github.com/john-denisov/devise.git
+  revision: c4026bd328828fac36feac3e92d2d90404e02086
   specs:
     devise (4.7.1)
       bcrypt (~> 3.0)
