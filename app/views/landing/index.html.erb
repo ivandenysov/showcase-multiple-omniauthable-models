@@ -1,0 +1,8 @@
+<%- unless current_user %>
+  <div><%= link_to "Sign in User with Facebook", user_facebook_omniauth_authorize_path %></div>
+<% end %>
+
+<%- if current_user.present? %>
+  <div><%= "Signed in as User: #{current_user.name}" %></div>
+  <div><%= link_to 'Sign out User', destroy_user_session_path, method: :delete %></div>
+<% end %>
