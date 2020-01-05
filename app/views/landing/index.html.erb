@@ -1,8 +1,16 @@
-<%- unless current_user %>
+<h1>User auth info</h1>
+<%- if current_user.present? %>
+  <div><%= "Signed in User: #{current_user.name}" %></div>
+  <div><%= link_to 'Sign out User', destroy_user_session_path, method: :delete %></div>
+<% else %>
+  <div>User is signed out</div>
   <div><%= link_to "Sign in User with Facebook", user_facebook_omniauth_authorize_path %></div>
 <% end %>
 
-<%- if current_user.present? %>
-  <div><%= "Signed in as User: #{current_user.name}" %></div>
-  <div><%= link_to 'Sign out User', destroy_user_session_path, method: :delete %></div>
+<h1>Manager auth info</h1>
+<%- if current_manager.present? %>
+  <div><%= "Signed in Manager: #{current_manager.name}" %></div>
+  <div><%= link_to 'Sign out Manager', destroy_manager_session_path, method: :delete %></div>
+<% else %>
+  <div>Manager is signed out</div>
 <% end %>
